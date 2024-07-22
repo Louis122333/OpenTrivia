@@ -1,0 +1,26 @@
+<div class="settings-container">
+  <h2>Quiz Settings</h2>
+  <form (ngSubmit)="startQuiz()" class="settings-form">
+    <div class="form-group">
+      <label for="amount">Number of Questions:</label>
+      <select id="amount" [(ngModel)]="settings.amount" name="amount" required>
+        <option *ngFor="let amount of questionAmounts" [value]="amount">{{ amount }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty" [(ngModel)]="settings.difficulty" name="difficulty">
+        <option *ngFor="let difficulty of difficulties" [value]="difficulty">{{ difficulty }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select id="category" [(ngModel)]="settings.category" name="category">
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+    </div>
+    <div class="form-buttons">
+      <button type="submit">Start Quiz</button>
+    </div>
+  </form>
+</div>

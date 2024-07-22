@@ -1,0 +1,34 @@
+<div class="container" *ngIf="!isQuizFinished && questions.length > 0">
+  <div class="question-info">
+    <p>Question {{ currentQuestionIndex + 1 }} of {{ totalQuestions }}</p>
+    <p>Score: {{ score }}</p>
+  </div>
+  <div class="question">
+    <h4 [innerHTML]="questions[currentQuestionIndex].question"></h4>
+  </div>
+  <div class="answers">
+    <button *ngFor="let answer of shuffledAnswers" 
+            (click)="selectAnswer(answer)" 
+            [disabled]="buttonsDisabled"
+            [ngClass]="{'correct': showAnswers && isCorrect(answer), 'incorrect': showAnswers && isIncorrect(answer)}">
+      {{ answer }}
+    </button>
+  </div>
+  <div *ngIf="!showAnswers">
+    <p class="timer">Time left: {{ timer }} seconds</p>
+  </div>
+  <div *ngIf="showAnswers">
+    <p class="feedback-message">{{ feedbackMessage }}</p>
+  </div>
+</div>
+<div class="container" *ngIf="isQuizFinished">
+  <h2>Quiz Finished</h2>
+  <p>Your final score: {{ score }}/{{ totalQuestions }}</p>
+  <p>Percentage correct: {{ percentageCorrect() }}%</p>
+  <p>You have been awarded the title:</p>
+  <h4>{{ getTitle() }}</h4>
+  <div class="form-buttons">
+    <button (click)="restartQuiz()">Restart Quiz</button>
+    <button (click)="quitQuiz()">Quit</button>
+  </div>
+</div>

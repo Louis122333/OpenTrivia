@@ -1,1 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #2ecc71; /* Emerald */
+    --background-color: #121212; /* Near black */
+    --text-color: #ffffff; /* White */
+    --button-background: #ffffff; /* White */
+    --button-hover-background: #f0f0f0; /* Light gray */
+    --correct-color: #2ecc71; /* Emerald */
+    --incorrect-color: #e74c3c; /* Red */
+    --timer-color: #ffffff; /* White */
+    --button-text-color: #000000; /* Black */
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-background);
+    color: var(--button-text-color);
+  }
+  
+  button.correct {
+    background-color: var(--correct-color);
+    color: var(--text-color);
+  }
+  
+  button.incorrect {
+    background-color: var(--incorrect-color);
+    color: var(--text-color);
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .question-info {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .question {
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .answers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .answers button {
+    flex: 1 1 calc(50% - 10px);
+    padding: 15px;
+    max-width: 45%;
+  }
+  
+  .timer, .feedback-message {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .question {
+      font-size: 20px;
+    }
+  
+    .answers button {
+      padding: 10px;
+    }
+  
+    .timer, .feedback-message {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .question {
+      font-size: 18px;
+    }
+  
+    .answers button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .timer, .feedback-message {
+      font-size: 14px;
+    }
+  }
