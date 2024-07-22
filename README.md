@@ -41,6 +41,10 @@ OpenTrivia is a fun and engaging quiz application designed to test your knowledg
      - **76-90%**: Scholar
      - **91-99%**: Touch Grass
      - **100%**: Possible Cheater
+    
+### Demo
+
+![opentriviademo-gif](https://github.com/user-attachments/assets/a7066802-a9f3-416d-ab38-86c93f9a2b25)
 
 ## Prerequisites
 
