@@ -67,8 +67,11 @@ Before you begin, ensure you have met the following requirements:
 ## Development Server
    Run ng serve for a development server. Navigate to http://localhost:4200/. 
    The application will automatically reload if you change any of the source files.
+   
+   You can also run ng serve --open (or just -o) to automatically open your browser to http://localhost:4200/.
+   
    ```bash
-   ng serve
+   ng serve --open
    ```
    
    
